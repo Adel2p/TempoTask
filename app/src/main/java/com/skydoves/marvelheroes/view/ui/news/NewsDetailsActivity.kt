@@ -34,7 +34,13 @@ class NewsDetailsActivity :
         article.author.whatIfNotNullOrEmpty {
             binding.itemArticleAuthor.text = "by ${article.author}"
         }
-
+        binding.itemArticleSource.setOnClickListener {
+            val intent = Intent(Intent.ACTION_VIEW)
+            if (article != null) {
+                intent.data = Uri.parse(article.url)
+            }
+            startActivity(intent)
+        }
     }
 
     companion object {
@@ -49,11 +55,4 @@ class NewsDetailsActivity :
         }
     }
 
-    fun onSaveClick() {
-        val intent = Intent(Intent.ACTION_VIEW)
-        if (article != null) {
-            intent.data = Uri.parse(article.url)
-        }
-        startActivity(intent)
-    }
 }
