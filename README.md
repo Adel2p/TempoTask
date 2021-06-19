@@ -6,10 +6,6 @@ Fetching data from the network and integrating persisted data in the database vi
 </p>
 </br>
 
-<p align="center">
-<img src="/previews/screenshot.png"/>
-</p>
-
 ## Tech stack & Open-source libraries
 - Minimum SDK level 21
 - [Kotlin](https://kotlinlang.org/) based + [Coroutines](https://github.com/Kotlin/kotlinx.coroutines) for asynchronous.
