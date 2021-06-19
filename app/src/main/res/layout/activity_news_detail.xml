@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="article"
+            type="com.skydoves.marvelheroes.model.Articles" />
+        <variable name="activity" type="com.skydoves.marvelheroes.view.ui.news.NewsDetailsActivity" />
+
+
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/background"
+            tools:context=".view.ui.news.NewsDetailsActivity">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/articleImage"
+                android:layout_width="match_parent"
+                android:layout_height="240dp"
+                android:scaleType="center"
+                android:src="@drawable/foreground_gradient_black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/item_article_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@id/articleImage"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:text="Iron Man" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/item_article_desc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                app:layout_constraintTop_toBottomOf="@id/item_article_title"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:text="Iron Man" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/item_article_author"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                android:textColor="@color/white"
+                android:textSize="13sp"
+                app:layout_constraintTop_toBottomOf="@id/item_article_desc"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:text="Iron Man" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/item_article_source"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                android:textColor="@color/white"
+                android:onClick="@{(view) -> activity.onSaveClick()}"
+                android:textSize="17sp"
+                app:layout_constraintTop_toBottomOf="@id/item_article_author"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:text="@string/source"/>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</layout>
